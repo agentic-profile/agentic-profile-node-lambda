@@ -18,7 +18,7 @@ import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use("/", express.static(join(__dirname, "../www")))
+app.use("/", express.static( join(__dirname, "www") ));
 
 //setStorage( new MySQLStorage() );
 setStorage( new InMemoryStorage() );
