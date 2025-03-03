@@ -2,8 +2,7 @@ import express from "express";
 import {
     app,
     handleAgentChatMessage,
-    InMemoryStorage,
-    //MySQLStorage,
+    MySQLStorage,
     openRoutes,
     setStorage
 } from "@agentic-profile/express";
@@ -22,8 +21,7 @@ app.use("/", express.static(
     //{ index: 'index.json' }
 ));
 
-//setStorage( new MySQLStorage() );
-setStorage( new InMemoryStorage() );
+setStorage( new MySQLStorage() );
 
 app.use("/v1", openRoutes({
     status: { name: "Testing" },

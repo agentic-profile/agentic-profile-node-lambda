@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@agentic-profile/auth@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@agentic-profile/auth/-/auth-0.1.6.tgz#514d32641b03b311ca7d68a71b6bf6eeb4cd58a9"
-  integrity sha512-y+NlHnxmv3XDJcQphwFGQYnbMDV2QpQFyssYZIvruWHg0q28F5x8X3FbipzoxSa/Oewp9fFw78UT857UF3oNPg==
+"@agentic-profile/auth@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@agentic-profile/auth/-/auth-0.1.7.tgz#2f232310deab20dbae8cb4ce665721d335dd4fff"
+  integrity sha512-k1WZt6N4zVEBw9jCSYr/N7Ce4EKfPg4WRIb8u+ikXtzeg9HgQ9ank3XmlX+ASjeRqtqIMfUbmo2m/hwxy06VcA==
   dependencies:
     "@noble/ed25519" "^2.2.3"
     "@types/node" "^22.9.2"
     axios "^1.7.9"
 
-"@agentic-profile/express@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@agentic-profile/express/-/express-0.1.3.tgz#e60051fcbf577d7b93cf0d8ebd4c4c599895c0e3"
-  integrity sha512-T6EG83xDTgm4GE9ja4GPyVmCzPWEjT+vlZbZVFlPEmL39QBf/5EwHPjaV9UcCo6J7d6BRD2p1b3E3KPzCGnz9A==
+"@agentic-profile/express@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@agentic-profile/express/-/express-0.1.5.tgz#720ca066f19bd828929123b0fbbc3cf45e0583a8"
+  integrity sha512-/vt926J+MIpDp1NQkiBfoIHLsRJFL2tgsSZjRS1wRPz7zYHXFVclqhfSckeMI+h+LLXSDEbhMfobciWdikoMtQ==
   dependencies:
-    "@agentic-profile/auth" "0.1.6"
+    "@agentic-profile/auth" "^0.1.7"
     "@types/basic-auth" "^1.1.8"
     "@types/cors" "^2.8.17"
     "@types/express" "^5.0.0"

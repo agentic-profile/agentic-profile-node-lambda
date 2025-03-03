@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/agentic-profile/agentic-profile-node-lambda#readme",
   "dependencies": {
-    "@agentic-profile/express": "0.1.4",
+    "@agentic-profile/express": "^0.1.5",
     "@codegenie/serverless-express": "^4.15.0",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
