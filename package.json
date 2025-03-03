@@ -1,7 +1,7 @@
 {
-  "name": "agentic-profile-node-service",
-  "version": "0.1.0",
-  "description": "Demo of a Node service for AI Agents available through Agentic Profiles",
+  "name": "agentic-profile-node-lambda",
+  "version": "0.1.1",
+  "description": "Demo of the Agent Profile service running on Lambda",
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node-dev --respawn --transpile-only index.local.js",
@@ -11,35 +11,23 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agentic-profile/agentic-profile-node-service.git"
+    "url": "git+https://github.com/agentic-profile/agentic-profile-node-lambda.git"
   },
   "author": "Mike Prince",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/agentic-profile/agentic-profile-node-service/issues"
+    "url": "https://github.com/agentic-profile/agentic-profile-node-lambda/issues"
   },
-  "homepage": "https://github.com/agentic-profile/agentic-profile-node-service#readme",
+  "homepage": "https://github.com/agentic-profile/agentic-profile-node-lambda#readme",
   "dependencies": {
-    "@agentic-profile/auth": "^0.1.1",
+    "@agentic-profile/express": "^0.1.2",
     "@codegenie/serverless-express": "^4.15.0",
-    "@types/basic-auth": "^1.1.8",
-    "@types/body-parser": "^1.19.5",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/moment-timezone": "^0.5.30",
-    "@types/morgan": "^1.9.9",
-    "@types/node": "^22.9.2",
     "axios": "^1.7.9",
-    "basic-auth": "^2.0.1",
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "moment-timezone": "^0.5.44",
-    "morgan": "^1.10.0",
     "mysql2": "^3.8.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2",
-    "tsup": "^8.3.6"
+    "typescript": "^5.7.2"
   }
 }

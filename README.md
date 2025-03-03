@@ -12,11 +12,11 @@ The easiest way to run this demo is locally.
 
 1. Clone this repository: 
 
-	$ git clone git@github.com:agentic-profile/agentic-profile-node-service.git
+	$ git clone git@github.com:agentic-profile/agentic-profile-node-lambda.git
 
 2. From the shell, switch to this project directory
 
-	$ cd agentic-profile-node-service
+	$ cd agentic-profile-node-lambda
 
 3. Download dependencies
 
