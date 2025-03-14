@@ -4,7 +4,8 @@ import {
     handleAgentChatMessage,
     MySQLStorage,
     openRoutes,
-    setStorage
+    setStorage,
+    setAgentHooks
 } from "@agentic-profile/express";
 import serverlessExpress from "@codegenie/serverless-express";
 
@@ -17,18 +18,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 app.use("/", express.static(
-    join(__dirname, "www"),
-    //{ index: 'index.json' }
+    join(__dirname, "www")
 ));
 
 setStorage( new MySQLStorage() );
+setAgentHooks({
+    createAgentDid: ( uid ) => `did:${process.env.AP_HOSTNAME ?? "example"}:iam:${uid}`
+});
 
-app.use("/v1", openRoutes({
+app.use("/", openRoutes({
     status: { name: "Testing" },
     handleAgentChatMessage
 }));
 
-app.use("/v1", routes());
+app.use("/", routes());
 
 const seHandler = serverlessExpress({ app });
 export function handler(event, context, callback ) {

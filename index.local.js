@@ -6,11 +6,11 @@ import {
     app,
     handleAgentChatMessage, // "full" version
     InMemoryStorage,
+    MySQLStorage,
     openRoutes,
+    setAgentHooks,
     setStorage
 } from "@agentic-profile/express";
-
-//import { MySQLStorage } from "./dist/storage/mysql.js";
 
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
@@ -20,10 +20,13 @@ const __dirname = dirname(__filename);
 
 app.use("/", express.static( join(__dirname, "www") ));
 
-//setStorage( new MySQLStorage() );
-setStorage( new InMemoryStorage() );
+const storage = process.env.AP_STORAGE === 'mysql' ? MySQLStorage : InMemoryStorage;
+setStorage( new storage() );
+setAgentHooks({
+    createAgenticDid: ( uid ) => `did:${process.env.AP_HOSTNAME ?? "example"}:iam:${uid}`
+});
 
-app.use("/v1", openRoutes({
+app.use("/", openRoutes({
     status: { name: "Testing" },
     handleAgentChatMessage
 }));
