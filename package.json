@@ -1,6 +1,6 @@
 {
   "name": "agentic-profile-node-lambda",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Demo of the Agent Profile service running on Lambda",
   "main": "index.js",
   "scripts": {
@@ -20,15 +20,16 @@
   },
   "homepage": "https://github.com/agentic-profile/agentic-profile-node-lambda#readme",
   "dependencies": {
-    "@agentic-profile/express": "^0.2.0",
+    "@agentic-profile/express": "^0.3.1",
     "@codegenie/serverless-express": "^4.15.0",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
-    "express": "^4.21.1",
+    "express": "^4.21.2",
     "moment-timezone": "^0.5.44",
     "mysql2": "^3.8.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }

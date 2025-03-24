@@ -1,13 +1,15 @@
 import express from "express";
+import serverlessExpress from "@codegenie/serverless-express";
+
+import { handleAgentChatMessage } from "@agentic-profile/chat";
+import { setAgentHooks } from "@agentic-profile/common";
 import {
     app,
-    handleAgentChatMessage,
+    ensureCreditBalance,
+    generateChatReply,
     MySQLStorage,
     openRoutes,
-    setStorage,
-    setAgentHooks
 } from "@agentic-profile/express";
-import serverlessExpress from "@codegenie/serverless-express";
 
 import { routes } from "./dist/routes.js"
 
@@ -21,14 +23,16 @@ app.use("/", express.static(
     join(__dirname, "www")
 ));
 
-setStorage( new MySQLStorage() );
 setAgentHooks({
-    createAgentDid: ( uid ) => `did:${process.env.AP_HOSTNAME ?? "example"}:iam:${uid}`
+    generateChatReply,
+    storage: new MySQLStorage(),
+    createUserAgentDid: (uid) => `did:${process.env.AP_DID_PATH}:${uid}`,
+    ensureCreditBalance,
+    handleAgentChatMessage
 });
 
 app.use("/", openRoutes({
-    status: { name: "Testing" },
-    handleAgentChatMessage
+    status: { name: "Testing" }
 }));
 
 app.use("/", routes());
