@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Agentic Profile Service</title>
+    <title>Agentic Profile Lambda Service</title>
     <style>
         body {
             width: 100%;
@@ -14,18 +14,36 @@
 
         .center-screen {
             display: flex;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             text-align: center;
             min-height: 100vh;
         }
+
+        .center-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;   
+        }
+
+        .details {
+            width: 400px;
+            text-align: left;
+            align-items: left;
+            justify-content: left;
+        }
     </style>
 </head>
 <body>
     <div class="center-screen">
-        <div>
-            <h1>Agentic Profile Service</h1>
-            To check the system status, visit <a href="/status">/status</a>
+        <div class="center-items">
+            <h1>Agentic Profile Lambda Service</h1>
+            <div class="details">
+                Demonstrates an Agentic Profile service running on AWS Lambda
+            </div>
         </div>
     </div>
 </body>

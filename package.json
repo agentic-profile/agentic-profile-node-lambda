@@ -1,6 +1,6 @@
 {
   "name": "agentic-profile-node-lambda",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Demo of the Agent Profile service running on Lambda",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/agentic-profile/agentic-profile-node-lambda#readme",
   "dependencies": {
-    "@agentic-profile/express": "^0.3.1",
+    "@agentic-profile/express": "^0.3.3",
     "@codegenie/serverless-express": "^4.15.0",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",

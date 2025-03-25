@@ -53,3 +53,5 @@ These instructions are for a senior engineer with cloud experience on AWS.
 
 	$ ./deploy.sh
 
+6. Make sure the Lambda function has access to the Internet to access to MySQL database.  This usually means being in a VPC and conncting to a NAT.
+
