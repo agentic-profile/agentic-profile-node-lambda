@@ -1,12 +1,12 @@
-import express from "express";
 import serverlessExpress from "@codegenie/serverless-express";
-
+import express from "express";
 import { handleAgentChatMessage } from "@agentic-profile/chat";
 import { setAgentHooks } from "@agentic-profile/common";
+import { app } from "@agentic-profile/express-common";
 import {
-    app,
     ensureCreditBalance,
     generateChatReply,
+
     MySQLStorage,
     openRoutes,
 } from "@agentic-profile/express";
@@ -19,9 +19,7 @@ import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use("/", express.static(
-    join(__dirname, "www")
-));
+app.use("/", express.static( join(__dirname, "www") ));
 
 setAgentHooks({
     generateChatReply,
@@ -32,7 +30,7 @@ setAgentHooks({
 });
 
 app.use("/", openRoutes({
-    status: { name: "Testing" }
+    status: { name: process.env.AP_SERVICE_NAME ?? "Agentic Profile Agent Service" }
 }));
 
 app.use("/", routes());

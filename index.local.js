@@ -1,17 +1,17 @@
-console.log( 'Running Node locally...' );
-
 import 'dotenv/config';
 import express from "express";
 import { handleAgentChatMessage } from "@agentic-profile/chat";
 import { setAgentHooks } from "@agentic-profile/common";
+import { app } from "@agentic-profile/express-common";
 import {
-    app,
     ensureCreditBalance,
     generateChatReply,
     InMemoryStorage,
     MySQLStorage,
     openRoutes,
 } from "@agentic-profile/express";
+
+import { routes } from "./dist/routes.js"
 
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
@@ -33,8 +33,10 @@ setAgentHooks({
 });
 
 app.use("/", openRoutes({
-    status: { name: "Testing" }
+    status: { name: process.env.AP_SERVICE_NAME ?? "Agentic Profile Agent Service" }
 }));
+
+app.use("/", routes());
 
 app.listen(port, () => {
     console.info(`Agentic Profile Node Service listening on http://localhost:${port}`);
